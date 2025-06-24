@@ -31,12 +31,12 @@ function CheckKhac(don: DonHang){
 const khachHangManager = new Khachhang();
 
 const KhachDauTien: KhachHang = {
-    tenkh: "Trần Bảo Châu",
-    thongtin: "Đến Từ Phú Yên"
+    tenkh: "Trần Văn A",
+    thongtin: "Đến Từ Hà Nội"
 }
 
 const KhachDauT2 = {
-    tenkh: "Đỗ Trọng Nghĩa",
+    tenkh: "Nguyễn Văn B",
     thongtin: "Đến Từ TPHCM"
 } as KhachHang
 
