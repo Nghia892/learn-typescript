@@ -100,3 +100,8 @@ function DocTen(User: {name: String, id: Number}){
 }
 // Chỉ Việc Gọi theo function...
 DocTen({name: "Jonny", id: 1})
+
+// Type Any, là loại type có thể gán bất kì Number String Boolean nào vào
+let Random: any = 1
+Random = "Nghia"
+Random = true
