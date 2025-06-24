@@ -1,0 +1,17 @@
+{
+  "name": "learn-typescript",
+  "version": "1.0.0",
+  "main": "First.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "git": "^0.1.5",
+    "git-download": "^0.0.2",
+    "lite-server": "^2.6.1"
+  }
+}
