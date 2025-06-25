@@ -68,3 +68,5 @@ function CheckType(str: string | number | boolean){
         console.log("Đây Là Boolean:", str)
     }
 }
+// Instance off
+
