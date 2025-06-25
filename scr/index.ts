@@ -105,3 +105,8 @@ DocTen({name: "Jonny", id: 1})
 let Random: any = 1
 Random = "Nghia"
 Random = true
+
+// As , suy ra 1 loại giá trị
+let testx: any = "Nghia" // Tạo 1 Text với any
+let lenght: number = (testx as String).length // Xài as để chuyển testx về String để lấy lengh
+console.log(lenght)
