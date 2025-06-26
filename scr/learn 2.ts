@@ -68,5 +68,65 @@ function CheckType(str: string | number | boolean){
         console.log("Đây Là Boolean:", str)
     }
 }
-// Instance off
+// Instanceof
+class Bird {
+    Fly(){
+        console.log("FLY");
+    }
 
+    Lay(){
+        console.log("LAY")
+    }
+}
+const AngryBird = new Bird()
+if(AngryBird instanceof Bird) // Giống như check xem đối tượng có trong 1 class không
+{
+    AngryBird.Fly()
+}
+
+//Equality
+function NumberOrString(arg: String | String[] | Number, arg2: String | Boolean) {
+    if(arg !== null){ // Kiểm Tra trước xem arg có phải là Null hay Không
+        if(Array.isArray(arg)){ // Kiểu tra nếu là Array, Hoặc cũng có thể xài typeof Object để check
+            for (const s of arg){
+                console.log(s)
+            }
+        }
+        if(typeof arg === "string"){ 
+            arg.toLowerCase();
+            console.log(arg)
+        }
+        if(typeof arg === "number"){
+            console.log(arg * 5)
+        }
+    }
+    if(arg === arg2){ // If dựa trên arg và arg2 sẽ True nếu cả 2 đều là String, nếu args2 là Boolean thì sẽ trả về False
+        arg.toLowerCase();
+        arg2.toUpperCase();
+    }
+    else
+    {
+        console.log(arg);
+        console.log(arg2)
+    }
+}
+
+//Type Predicates
+
+function Typeis(te: any): te is string {
+    return typeof te === "string"
+}
+function Printtypeis(prn: any) {
+    if(Typeis(prn)){
+        console.log(prn)
+    }
+}
+
+Printtypeis("")
+
+// satisfies
+type Colors = 'red' | 'blue' | 'green';
+
+const myColor = 'red' satisfies Colors;
+
+console.log(myColor)
