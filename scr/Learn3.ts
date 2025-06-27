@@ -30,3 +30,52 @@ function Gen<Type>(arg: Type[]): Type | undefined {  //Xài generic để xá đ
     return arg[0]
 }
 Gen([1,2,3])
+
+//Class + constructor
+class Example {
+    public name: string;
+    private pass: number;
+    constructor(name: string, pass: number){
+        this.name = name,
+        this.pass = pass
+    }
+}
+
+// abstract (hàm này giống khởi tạo 1 class không thể tạo qua 1 lệnh new) cần class khác liên kết thông qua
+abstract class Lop1 {
+    PrintHW() {
+        console.log("Hello World")
+    }
+} // Tạo 1 class abstract có PrintHW
+
+class Lop2 extends Lop1 {
+    PrintHW2(): void {
+        console.log("Print Hallo")
+    }
+} // xài Lop2 để tham chiếu Lop1
+const worldclass = new Lop2()
+worldclass.PrintHW()
+
+
+// Generic 
+function DataG<T>(arg: T): T{
+    console.log(arg)
+    return arg;
+}
+DataG<String>("Hello")
+
+// @experimentalDecorators
+
+function ReportUrl<T extends {new (...args: any[]): {}}> (constructor: T) { //Sử dụng Generic để tạo , T sẽ kế thừa Constructor đã tạo trên class gốc
+    return class extends constructor { //Class sẽ kế thừa constructor 
+        reportingURL = "Https"
+    }
+}
+@ReportUrl // Vẫn đang học decoroator thêm
+class datasend {
+    constructor(public user: string) {}
+}
+
+const user = new datasend("Alice");
+console.log(user.user);
+console.log((user as any).reportingURL);
