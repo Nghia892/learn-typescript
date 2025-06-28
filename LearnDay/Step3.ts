@@ -79,3 +79,32 @@ class datasend {
 const user = new datasend("Alice");
 console.log(user.user);
 console.log((user as any).reportingURL);
+
+
+function enumerable(value: boolean){
+    return function(target: any, propertyKey: string, descriptor: PropertyDescriptor){
+        descriptor.configurable = value;
+    };
+}
+
+// @experimentalDecorators
+
+class Point {
+    private _x: number
+    private _y: number
+
+    constructor(x: number, y: number){
+        this._x = x;
+        this._y = y
+    }
+
+    @enumerable(false)
+    get x() {
+        return this._x;
+    }
+
+    @enumerable(false)
+    get y() {
+        return this._y;
+    }
+}
